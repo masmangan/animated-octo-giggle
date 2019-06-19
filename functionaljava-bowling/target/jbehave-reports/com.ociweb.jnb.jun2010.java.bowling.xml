@@ -1,0 +1,516 @@
+<story path="com/ociweb/jnb/jun2010/java/bowling/bowling_scenario" title="">
+<scenario keyword="Scenario:" title="No score after one roll">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then there should be no score at frame 1</step>
+</scenario>
+<scenario keyword="Scenario:" title="No score after spare">
+<step outcome="successful">Given a 8 count is bowled and spare is made</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then there should be no score at frame 1</step>
+</scenario>
+<scenario keyword="Scenario:" title="Score after spare and first roll">
+<step outcome="successful">Given a 9 count is bowled and spare is made</step>
+<step outcome="successful">And an 9 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 19</step>
+<step outcome="successful">And 19 the score at frame 1 should be</step>
+</scenario>
+<scenario keyword="Scenario:" title="Start with an open">
+<step outcome="successful">Given an 8 count is bowled and only 1 is picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 9</step>
+</scenario>
+<scenario keyword="Scenario:" title="Three Strikes">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And a strike is bowled</step>
+<step outcome="successful">And a strike is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 30</step>
+</scenario>
+<scenario keyword="Scenario:" title="Strike and Spare">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And an 8 count is bowled and spare is made</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 20</step>
+</scenario>
+<scenario keyword="Scenario:" title="Start with an open again">
+<step outcome="successful">Given an 8 count is bowled and none are picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 8</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid single roll">
+<step outcome="successful">Given an 11 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid spare roll">
+<step outcome="successful">Given an 9 count is bowled and only 2 are picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid single roll">
+<step outcome="successful">Given an -1 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid roll">
+<step outcome="successful">Given an 5 count is bowled and only -1 is picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid rolls">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And an -1 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid rolls">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And a strike is bowled</step>
+<step outcome="successful">And an -1 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="300 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 300</step>
+<step outcome="successful">And 270 the score at frame 9 should be</step>
+</scenario>
+<scenario keyword="Scenario:" title="299 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXXX9</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 299</step>
+</scenario>
+<scenario keyword="Scenario:" title="290 Game">
+<step outcome="successful">Given rolls look like 9/XXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 290</step>
+</scenario>
+<scenario keyword="Scenario:" title="289 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXX9/</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 289</step>
+</scenario>
+<scenario keyword="Scenario:" title="288 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXX9-</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 288</step>
+</scenario>
+<scenario keyword="Scenario:" title="280 Game">
+<step outcome="successful">Given rolls look like X9/XXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 280</step>
+</scenario>
+<scenario keyword="Scenario:" title="279 Game">
+<step outcome="successful">Given rolls look like XX9/XXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 279</step>
+</scenario>
+<scenario keyword="Scenario:" title="279 Game">
+<step outcome="successful">Given rolls look like 9-XXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 279</step>
+</scenario>
+<scenario keyword="Scenario:" title="267 Game">
+<step outcome="successful">Given rolls look like XX9-XXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 267</step>
+</scenario>
+<scenario keyword="Scenario:" title="Dutch 200">
+<step outcome="successful">Given rolls look like X9/X9/X9/X9/X9/X9/</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 200</step>
+</scenario>
+<scenario keyword="Scenario:" title="All spares">
+<step outcome="successful">Given rolls look like 9/9/9/9/9/9/9/9/9/9/9/9/</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 190</step>
+</scenario>
+<scenario keyword="Scenario:" title="All misses">
+<step outcome="successful">Given rolls look like 9-9-9-9-9-9-9-9-9-9-</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 90</step>
+</scenario>
+<scenario keyword="Scenario:" title="Time for the bumpers">
+<step outcome="successful">Given rolls look like --------------------</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 0</step>
+</scenario>
+<scenario keyword="Scenario:" title="Too many rolls should be ignored">
+<step outcome="successful">Given rolls look like XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 300</step>
+</scenario>
+<scenario keyword="Scenario:" title="Table">
+<examples keyword="Examples:">
+<step>Given rolls are &lt;rolls&gt;</step>
+<step>When scores are tallied</step>
+<step>Then scores should be &lt;scores&gt;</step>
+<parameters>
+<names><name>rolls</name><name>scores</name></names>
+<values><value>9-</value><value>9</value></values>
+<values><value>9/9</value><value>19</value></values>
+<values><value>X X 9</value><value>29</value></values>
+<values><value>X X X</value><value>30</value></values>
+<values><value>X X X 8</value><value>30  58</value></values>
+<values><value>X X X 81</value><value>30  58  77 86</value></values>
+<values><value>X X X X X X X X X XXX</value><value>30  60  90 120 150 180 210 240 270 300</value></values>
+<values><value>X X X X X X X X X XX9</value><value>30  60  90 120 150 180 210 240 270 299</value></values>
+<values><value>X X X X X X X X X XX-</value><value>30  60  90 120 150 180 210 240 270 290</value></values>
+<values><value>9/X X X X X X X X XXX</value><value>20  50  80 110 140 170 200 230 260 290</value></values>
+<values><value>X X X X X X X X X X9/</value><value>30  60  90 120 150 180 210 240 269 289</value></values>
+<values><value>X X X X X X X X X X9-</value><value>30  60  90 120 150 180 210 240 269 288</value></values>
+<values><value>X X X X X X X X X X81</value><value>30  60  90 120 150 180 210 240 268 287</value></values>
+<values><value>X -/X X X X X X X XXX</value><value>20  40  70 100 130 160 190 220 250 280</value></values>
+<values><value>X --X X X X X X X XXX</value><value>10  10  40  70 100 130 160 190 220 250</value></values>
+<values><value>X 9/X 9/X 9/X 9/X 9/X</value><value>20  40  60  80 100 120 140 160 180 200</value></values>
+<values><value>--------------------</value><value>0   0   0   0   0   0   0   0   0   0</value></values>
+</parameters>
+
+<example keyword="Example:">{scores=9, rolls=9-}</example>
+<step outcome="successful">Given rolls are <parameter>9-</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>9</parameter></step>
+
+<example keyword="Example:">{scores=19, rolls=9/9}</example>
+<step outcome="successful">Given rolls are <parameter>9/9</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>19</parameter></step>
+
+<example keyword="Example:">{scores=29, rolls=X X 9}</example>
+<step outcome="successful">Given rolls are <parameter>X X 9</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>29</parameter></step>
+
+<example keyword="Example:">{scores=30, rolls=X X X}</example>
+<step outcome="successful">Given rolls are <parameter>X X X</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30</parameter></step>
+
+<example keyword="Example:">{scores=30  58, rolls=X X X 8}</example>
+<step outcome="successful">Given rolls are <parameter>X X X 8</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  58</parameter></step>
+
+<example keyword="Example:">{scores=30  58  77 86, rolls=X X X 81}</example>
+<step outcome="successful">Given rolls are <parameter>X X X 81</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  58  77 86</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 270 300, rolls=X X X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 270 300</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 270 299, rolls=X X X X X X X X X XX9}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X XX9</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 270 299</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 270 290, rolls=X X X X X X X X X XX-}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X XX-</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 270 290</parameter></step>
+
+<example keyword="Example:">{scores=20  50  80 110 140 170 200 230 260 290, rolls=9/X X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>9/X X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>20  50  80 110 140 170 200 230 260 290</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 269 289, rolls=X X X X X X X X X X9/}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X X9/</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 269 289</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 269 288, rolls=X X X X X X X X X X9-}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X X9-</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 269 288</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 268 287, rolls=X X X X X X X X X X81}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X X81</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 268 287</parameter></step>
+
+<example keyword="Example:">{scores=20  40  70 100 130 160 190 220 250 280, rolls=X -/X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>X -/X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>20  40  70 100 130 160 190 220 250 280</parameter></step>
+
+<example keyword="Example:">{scores=10  10  40  70 100 130 160 190 220 250, rolls=X --X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>X --X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>10  10  40  70 100 130 160 190 220 250</parameter></step>
+
+<example keyword="Example:">{scores=20  40  60  80 100 120 140 160 180 200, rolls=X 9/X 9/X 9/X 9/X 9/X}</example>
+<step outcome="successful">Given rolls are <parameter>X 9/X 9/X 9/X 9/X 9/X</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>20  40  60  80 100 120 140 160 180 200</parameter></step>
+
+<example keyword="Example:">{scores=0   0   0   0   0   0   0   0   0   0, rolls=--------------------}</example>
+<step outcome="successful">Given rolls are <parameter>--------------------</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>0   0   0   0   0   0   0   0   0   0</parameter></step>
+</examples>
+</scenario>
+</story>
+<story path="com/ociweb/jnb/jun2010/java/bowling/bowling_scenario" title="">
+<scenario keyword="Scenario:" title="No score after one roll">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then there should be no score at frame 1</step>
+</scenario>
+<scenario keyword="Scenario:" title="No score after spare">
+<step outcome="successful">Given a 8 count is bowled and spare is made</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then there should be no score at frame 1</step>
+</scenario>
+<scenario keyword="Scenario:" title="Score after spare and first roll">
+<step outcome="successful">Given a 9 count is bowled and spare is made</step>
+<step outcome="successful">And an 9 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 19</step>
+<step outcome="successful">And 19 the score at frame 1 should be</step>
+</scenario>
+<scenario keyword="Scenario:" title="Start with an open">
+<step outcome="successful">Given an 8 count is bowled and only 1 is picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 9</step>
+</scenario>
+<scenario keyword="Scenario:" title="Three Strikes">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And a strike is bowled</step>
+<step outcome="successful">And a strike is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 30</step>
+</scenario>
+<scenario keyword="Scenario:" title="Strike and Spare">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And an 8 count is bowled and spare is made</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 20</step>
+</scenario>
+<scenario keyword="Scenario:" title="Start with an open again">
+<step outcome="successful">Given an 8 count is bowled and none are picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 1 should be 8</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid single roll">
+<step outcome="successful">Given an 11 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid spare roll">
+<step outcome="successful">Given an 9 count is bowled and only 2 are picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid single roll">
+<step outcome="successful">Given an -1 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid roll">
+<step outcome="successful">Given an 5 count is bowled and only -1 is picked</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid rolls">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And an -1 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="Invalid rolls">
+<step outcome="successful">Given a strike is bowled</step>
+<step outcome="successful">And a strike is bowled</step>
+<step outcome="successful">And an -1 count is bowled</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then invalid pin count should be detected</step>
+</scenario>
+<scenario keyword="Scenario:" title="300 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 300</step>
+<step outcome="successful">And 270 the score at frame 9 should be</step>
+</scenario>
+<scenario keyword="Scenario:" title="299 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXXX9</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 299</step>
+</scenario>
+<scenario keyword="Scenario:" title="290 Game">
+<step outcome="successful">Given rolls look like 9/XXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 290</step>
+</scenario>
+<scenario keyword="Scenario:" title="289 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXX9/</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 289</step>
+</scenario>
+<scenario keyword="Scenario:" title="288 Game">
+<step outcome="successful">Given rolls look like XXXXXXXXXX9-</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 288</step>
+</scenario>
+<scenario keyword="Scenario:" title="280 Game">
+<step outcome="successful">Given rolls look like X9/XXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 280</step>
+</scenario>
+<scenario keyword="Scenario:" title="279 Game">
+<step outcome="successful">Given rolls look like XX9/XXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 279</step>
+</scenario>
+<scenario keyword="Scenario:" title="279 Game">
+<step outcome="successful">Given rolls look like 9-XXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 279</step>
+</scenario>
+<scenario keyword="Scenario:" title="267 Game">
+<step outcome="successful">Given rolls look like XX9-XXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 267</step>
+</scenario>
+<scenario keyword="Scenario:" title="Dutch 200">
+<step outcome="successful">Given rolls look like X9/X9/X9/X9/X9/X9/</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 200</step>
+</scenario>
+<scenario keyword="Scenario:" title="All spares">
+<step outcome="successful">Given rolls look like 9/9/9/9/9/9/9/9/9/9/9/9/</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 190</step>
+</scenario>
+<scenario keyword="Scenario:" title="All misses">
+<step outcome="successful">Given rolls look like 9-9-9-9-9-9-9-9-9-9-</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 90</step>
+</scenario>
+<scenario keyword="Scenario:" title="Time for the bumpers">
+<step outcome="successful">Given rolls look like --------------------</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 0</step>
+</scenario>
+<scenario keyword="Scenario:" title="Too many rolls should be ignored">
+<step outcome="successful">Given rolls look like XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then the score at frame 10 should be 300</step>
+</scenario>
+<scenario keyword="Scenario:" title="Table">
+<examples keyword="Examples:">
+<step>Given rolls are &lt;rolls&gt;</step>
+<step>When scores are tallied</step>
+<step>Then scores should be &lt;scores&gt;</step>
+<parameters>
+<names><name>rolls</name><name>scores</name></names>
+<values><value>9-</value><value>9</value></values>
+<values><value>9/9</value><value>19</value></values>
+<values><value>X X 9</value><value>29</value></values>
+<values><value>X X X</value><value>30</value></values>
+<values><value>X X X 8</value><value>30  58</value></values>
+<values><value>X X X 81</value><value>30  58  77 86</value></values>
+<values><value>X X X X X X X X X XXX</value><value>30  60  90 120 150 180 210 240 270 300</value></values>
+<values><value>X X X X X X X X X XX9</value><value>30  60  90 120 150 180 210 240 270 299</value></values>
+<values><value>X X X X X X X X X XX-</value><value>30  60  90 120 150 180 210 240 270 290</value></values>
+<values><value>9/X X X X X X X X XXX</value><value>20  50  80 110 140 170 200 230 260 290</value></values>
+<values><value>X X X X X X X X X X9/</value><value>30  60  90 120 150 180 210 240 269 289</value></values>
+<values><value>X X X X X X X X X X9-</value><value>30  60  90 120 150 180 210 240 269 288</value></values>
+<values><value>X X X X X X X X X X81</value><value>30  60  90 120 150 180 210 240 268 287</value></values>
+<values><value>X -/X X X X X X X XXX</value><value>20  40  70 100 130 160 190 220 250 280</value></values>
+<values><value>X --X X X X X X X XXX</value><value>10  10  40  70 100 130 160 190 220 250</value></values>
+<values><value>X 9/X 9/X 9/X 9/X 9/X</value><value>20  40  60  80 100 120 140 160 180 200</value></values>
+<values><value>--------------------</value><value>0   0   0   0   0   0   0   0   0   0</value></values>
+</parameters>
+
+<example keyword="Example:">{scores=9, rolls=9-}</example>
+<step outcome="successful">Given rolls are <parameter>9-</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>9</parameter></step>
+
+<example keyword="Example:">{scores=19, rolls=9/9}</example>
+<step outcome="successful">Given rolls are <parameter>9/9</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>19</parameter></step>
+
+<example keyword="Example:">{scores=29, rolls=X X 9}</example>
+<step outcome="successful">Given rolls are <parameter>X X 9</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>29</parameter></step>
+
+<example keyword="Example:">{scores=30, rolls=X X X}</example>
+<step outcome="successful">Given rolls are <parameter>X X X</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30</parameter></step>
+
+<example keyword="Example:">{scores=30  58, rolls=X X X 8}</example>
+<step outcome="successful">Given rolls are <parameter>X X X 8</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  58</parameter></step>
+
+<example keyword="Example:">{scores=30  58  77 86, rolls=X X X 81}</example>
+<step outcome="successful">Given rolls are <parameter>X X X 81</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  58  77 86</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 270 300, rolls=X X X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 270 300</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 270 299, rolls=X X X X X X X X X XX9}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X XX9</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 270 299</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 270 290, rolls=X X X X X X X X X XX-}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X XX-</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 270 290</parameter></step>
+
+<example keyword="Example:">{scores=20  50  80 110 140 170 200 230 260 290, rolls=9/X X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>9/X X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>20  50  80 110 140 170 200 230 260 290</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 269 289, rolls=X X X X X X X X X X9/}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X X9/</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 269 289</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 269 288, rolls=X X X X X X X X X X9-}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X X9-</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 269 288</parameter></step>
+
+<example keyword="Example:">{scores=30  60  90 120 150 180 210 240 268 287, rolls=X X X X X X X X X X81}</example>
+<step outcome="successful">Given rolls are <parameter>X X X X X X X X X X81</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>30  60  90 120 150 180 210 240 268 287</parameter></step>
+
+<example keyword="Example:">{scores=20  40  70 100 130 160 190 220 250 280, rolls=X -/X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>X -/X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>20  40  70 100 130 160 190 220 250 280</parameter></step>
+
+<example keyword="Example:">{scores=10  10  40  70 100 130 160 190 220 250, rolls=X --X X X X X X X XXX}</example>
+<step outcome="successful">Given rolls are <parameter>X --X X X X X X X XXX</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>10  10  40  70 100 130 160 190 220 250</parameter></step>
+
+<example keyword="Example:">{scores=20  40  60  80 100 120 140 160 180 200, rolls=X 9/X 9/X 9/X 9/X 9/X}</example>
+<step outcome="successful">Given rolls are <parameter>X 9/X 9/X 9/X 9/X 9/X</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>20  40  60  80 100 120 140 160 180 200</parameter></step>
+
+<example keyword="Example:">{scores=0   0   0   0   0   0   0   0   0   0, rolls=--------------------}</example>
+<step outcome="successful">Given rolls are <parameter>--------------------</parameter></step>
+<step outcome="successful">When scores are tallied</step>
+<step outcome="successful">Then scores should be <parameter>0   0   0   0   0   0   0   0   0   0</parameter></step>
+</examples>
+</scenario>
+</story>

@@ -1,0 +1,22 @@
+#org.jbehave.scenario.reporters.StatisticsScenarioReporter
+#Mon Jun 10 19:41:23 BRT 2019
+scenariosFailed=0
+examples=17
+givenScenarios=0
+stepsPending=0
+stepsNotPerformed=0
+stepsFailed=0
+scenarios=28
+stepsSuccessful=141
+steps=141
+#org.jbehave.scenario.reporters.StatisticsScenarioReporter
+#Mon Jun 17 19:28:04 BRT 2019
+scenariosFailed=0
+examples=17
+givenScenarios=0
+stepsPending=0
+stepsNotPerformed=0
+stepsFailed=0
+scenarios=28
+stepsSuccessful=141
+steps=141

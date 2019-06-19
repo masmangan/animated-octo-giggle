@@ -1,0 +1,622 @@
+<div class="story">
+<h1></h1>
+<div class="path">com/ociweb/jnb/jun2010/java/bowling/bowling_scenario</div>
+<div class="scenario">
+<h2>Scenario: No score after one roll</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then there should be no score at frame 1</div>
+</div>
+<div class="scenario">
+<h2>Scenario: No score after spare</h2>
+<div class="step successful">Given a 8 count is bowled and spare is made</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then there should be no score at frame 1</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Score after spare and first roll</h2>
+<div class="step successful">Given a 9 count is bowled and spare is made</div>
+<div class="step successful">And an 9 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 19</div>
+<div class="step successful">And 19 the score at frame 1 should be</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Start with an open</h2>
+<div class="step successful">Given an 8 count is bowled and only 1 is picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 9</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Three Strikes</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And a strike is bowled</div>
+<div class="step successful">And a strike is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 30</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Strike and Spare</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And an 8 count is bowled and spare is made</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 20</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Start with an open again</h2>
+<div class="step successful">Given an 8 count is bowled and none are picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 8</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid single roll</h2>
+<div class="step successful">Given an 11 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid spare roll</h2>
+<div class="step successful">Given an 9 count is bowled and only 2 are picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid single roll</h2>
+<div class="step successful">Given an -1 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid roll</h2>
+<div class="step successful">Given an 5 count is bowled and only -1 is picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid rolls</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And an -1 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid rolls</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And a strike is bowled</div>
+<div class="step successful">And an -1 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 300 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 300</div>
+<div class="step successful">And 270 the score at frame 9 should be</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 299 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXXX9</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 299</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 290 Game</h2>
+<div class="step successful">Given rolls look like 9/XXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 290</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 289 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXX9/</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 289</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 288 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXX9-</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 288</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 280 Game</h2>
+<div class="step successful">Given rolls look like X9/XXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 280</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 279 Game</h2>
+<div class="step successful">Given rolls look like XX9/XXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 279</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 279 Game</h2>
+<div class="step successful">Given rolls look like 9-XXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 279</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 267 Game</h2>
+<div class="step successful">Given rolls look like XX9-XXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 267</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Dutch 200</h2>
+<div class="step successful">Given rolls look like X9/X9/X9/X9/X9/X9/</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 200</div>
+</div>
+<div class="scenario">
+<h2>Scenario: All spares</h2>
+<div class="step successful">Given rolls look like 9/9/9/9/9/9/9/9/9/9/9/9/</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 190</div>
+</div>
+<div class="scenario">
+<h2>Scenario: All misses</h2>
+<div class="step successful">Given rolls look like 9-9-9-9-9-9-9-9-9-9-</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 90</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Time for the bumpers</h2>
+<div class="step successful">Given rolls look like --------------------</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 0</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Too many rolls should be ignored</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 300</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Table</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given rolls are &lt;rolls&gt;</div>
+<div class="step">When scores are tallied</div>
+<div class="step">Then scores should be &lt;scores&gt;</div>
+<table>
+<thead>
+<tr>
+<th>rolls</th><th>scores</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>9-</td><td>9</td></tr>
+<tr>
+<td>9/9</td><td>19</td></tr>
+<tr>
+<td>X X 9</td><td>29</td></tr>
+<tr>
+<td>X X X</td><td>30</td></tr>
+<tr>
+<td>X X X 8</td><td>30  58</td></tr>
+<tr>
+<td>X X X 81</td><td>30  58  77 86</td></tr>
+<tr>
+<td>X X X X X X X X X XXX</td><td>30  60  90 120 150 180 210 240 270 300</td></tr>
+<tr>
+<td>X X X X X X X X X XX9</td><td>30  60  90 120 150 180 210 240 270 299</td></tr>
+<tr>
+<td>X X X X X X X X X XX-</td><td>30  60  90 120 150 180 210 240 270 290</td></tr>
+<tr>
+<td>9/X X X X X X X X XXX</td><td>20  50  80 110 140 170 200 230 260 290</td></tr>
+<tr>
+<td>X X X X X X X X X X9/</td><td>30  60  90 120 150 180 210 240 269 289</td></tr>
+<tr>
+<td>X X X X X X X X X X9-</td><td>30  60  90 120 150 180 210 240 269 288</td></tr>
+<tr>
+<td>X X X X X X X X X X81</td><td>30  60  90 120 150 180 210 240 268 287</td></tr>
+<tr>
+<td>X -/X X X X X X X XXX</td><td>20  40  70 100 130 160 190 220 250 280</td></tr>
+<tr>
+<td>X --X X X X X X X XXX</td><td>10  10  40  70 100 130 160 190 220 250</td></tr>
+<tr>
+<td>X 9/X 9/X 9/X 9/X 9/X</td><td>20  40  60  80 100 120 140 160 180 200</td></tr>
+<tr>
+<td>--------------------</td><td>0   0   0   0   0   0   0   0   0   0</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {scores=9, rolls=9-}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">9-</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">9</span></div>
+
+<h3 class="example">Example: {scores=19, rolls=9/9}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">9/9</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">19</span></div>
+
+<h3 class="example">Example: {scores=29, rolls=X X 9}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X 9</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">29</span></div>
+
+<h3 class="example">Example: {scores=30, rolls=X X X}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30</span></div>
+
+<h3 class="example">Example: {scores=30  58, rolls=X X X 8}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X 8</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  58</span></div>
+
+<h3 class="example">Example: {scores=30  58  77 86, rolls=X X X 81}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X 81</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  58  77 86</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 270 300, rolls=X X X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 270 300</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 270 299, rolls=X X X X X X X X X XX9}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X XX9</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 270 299</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 270 290, rolls=X X X X X X X X X XX-}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X XX-</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 270 290</span></div>
+
+<h3 class="example">Example: {scores=20  50  80 110 140 170 200 230 260 290, rolls=9/X X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">9/X X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">20  50  80 110 140 170 200 230 260 290</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 269 289, rolls=X X X X X X X X X X9/}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X X9/</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 269 289</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 269 288, rolls=X X X X X X X X X X9-}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X X9-</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 269 288</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 268 287, rolls=X X X X X X X X X X81}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X X81</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 268 287</span></div>
+
+<h3 class="example">Example: {scores=20  40  70 100 130 160 190 220 250 280, rolls=X -/X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X -/X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">20  40  70 100 130 160 190 220 250 280</span></div>
+
+<h3 class="example">Example: {scores=10  10  40  70 100 130 160 190 220 250, rolls=X --X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X --X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">10  10  40  70 100 130 160 190 220 250</span></div>
+
+<h3 class="example">Example: {scores=20  40  60  80 100 120 140 160 180 200, rolls=X 9/X 9/X 9/X 9/X 9/X}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X 9/X 9/X 9/X 9/X 9/X</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">20  40  60  80 100 120 140 160 180 200</span></div>
+
+<h3 class="example">Example: {scores=0   0   0   0   0   0   0   0   0   0, rolls=--------------------}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">--------------------</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">0   0   0   0   0   0   0   0   0   0</span></div>
+</div>
+</div>
+</div>
+<div class="story">
+<h1></h1>
+<div class="path">com/ociweb/jnb/jun2010/java/bowling/bowling_scenario</div>
+<div class="scenario">
+<h2>Scenario: No score after one roll</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then there should be no score at frame 1</div>
+</div>
+<div class="scenario">
+<h2>Scenario: No score after spare</h2>
+<div class="step successful">Given a 8 count is bowled and spare is made</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then there should be no score at frame 1</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Score after spare and first roll</h2>
+<div class="step successful">Given a 9 count is bowled and spare is made</div>
+<div class="step successful">And an 9 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 19</div>
+<div class="step successful">And 19 the score at frame 1 should be</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Start with an open</h2>
+<div class="step successful">Given an 8 count is bowled and only 1 is picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 9</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Three Strikes</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And a strike is bowled</div>
+<div class="step successful">And a strike is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 30</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Strike and Spare</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And an 8 count is bowled and spare is made</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 20</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Start with an open again</h2>
+<div class="step successful">Given an 8 count is bowled and none are picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 1 should be 8</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid single roll</h2>
+<div class="step successful">Given an 11 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid spare roll</h2>
+<div class="step successful">Given an 9 count is bowled and only 2 are picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid single roll</h2>
+<div class="step successful">Given an -1 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid roll</h2>
+<div class="step successful">Given an 5 count is bowled and only -1 is picked</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid rolls</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And an -1 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Invalid rolls</h2>
+<div class="step successful">Given a strike is bowled</div>
+<div class="step successful">And a strike is bowled</div>
+<div class="step successful">And an -1 count is bowled</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then invalid pin count should be detected</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 300 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 300</div>
+<div class="step successful">And 270 the score at frame 9 should be</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 299 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXXX9</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 299</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 290 Game</h2>
+<div class="step successful">Given rolls look like 9/XXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 290</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 289 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXX9/</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 289</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 288 Game</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXX9-</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 288</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 280 Game</h2>
+<div class="step successful">Given rolls look like X9/XXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 280</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 279 Game</h2>
+<div class="step successful">Given rolls look like XX9/XXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 279</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 279 Game</h2>
+<div class="step successful">Given rolls look like 9-XXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 279</div>
+</div>
+<div class="scenario">
+<h2>Scenario: 267 Game</h2>
+<div class="step successful">Given rolls look like XX9-XXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 267</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Dutch 200</h2>
+<div class="step successful">Given rolls look like X9/X9/X9/X9/X9/X9/</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 200</div>
+</div>
+<div class="scenario">
+<h2>Scenario: All spares</h2>
+<div class="step successful">Given rolls look like 9/9/9/9/9/9/9/9/9/9/9/9/</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 190</div>
+</div>
+<div class="scenario">
+<h2>Scenario: All misses</h2>
+<div class="step successful">Given rolls look like 9-9-9-9-9-9-9-9-9-9-</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 90</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Time for the bumpers</h2>
+<div class="step successful">Given rolls look like --------------------</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 0</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Too many rolls should be ignored</h2>
+<div class="step successful">Given rolls look like XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then the score at frame 10 should be 300</div>
+</div>
+<div class="scenario">
+<h2>Scenario: Table</h2>
+<div class="examples">
+<h3>Examples:</h3>
+<div class="step">Given rolls are &lt;rolls&gt;</div>
+<div class="step">When scores are tallied</div>
+<div class="step">Then scores should be &lt;scores&gt;</div>
+<table>
+<thead>
+<tr>
+<th>rolls</th><th>scores</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>9-</td><td>9</td></tr>
+<tr>
+<td>9/9</td><td>19</td></tr>
+<tr>
+<td>X X 9</td><td>29</td></tr>
+<tr>
+<td>X X X</td><td>30</td></tr>
+<tr>
+<td>X X X 8</td><td>30  58</td></tr>
+<tr>
+<td>X X X 81</td><td>30  58  77 86</td></tr>
+<tr>
+<td>X X X X X X X X X XXX</td><td>30  60  90 120 150 180 210 240 270 300</td></tr>
+<tr>
+<td>X X X X X X X X X XX9</td><td>30  60  90 120 150 180 210 240 270 299</td></tr>
+<tr>
+<td>X X X X X X X X X XX-</td><td>30  60  90 120 150 180 210 240 270 290</td></tr>
+<tr>
+<td>9/X X X X X X X X XXX</td><td>20  50  80 110 140 170 200 230 260 290</td></tr>
+<tr>
+<td>X X X X X X X X X X9/</td><td>30  60  90 120 150 180 210 240 269 289</td></tr>
+<tr>
+<td>X X X X X X X X X X9-</td><td>30  60  90 120 150 180 210 240 269 288</td></tr>
+<tr>
+<td>X X X X X X X X X X81</td><td>30  60  90 120 150 180 210 240 268 287</td></tr>
+<tr>
+<td>X -/X X X X X X X XXX</td><td>20  40  70 100 130 160 190 220 250 280</td></tr>
+<tr>
+<td>X --X X X X X X X XXX</td><td>10  10  40  70 100 130 160 190 220 250</td></tr>
+<tr>
+<td>X 9/X 9/X 9/X 9/X 9/X</td><td>20  40  60  80 100 120 140 160 180 200</td></tr>
+<tr>
+<td>--------------------</td><td>0   0   0   0   0   0   0   0   0   0</td></tr>
+</tbody>
+</table>
+
+<h3 class="example">Example: {scores=9, rolls=9-}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">9-</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">9</span></div>
+
+<h3 class="example">Example: {scores=19, rolls=9/9}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">9/9</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">19</span></div>
+
+<h3 class="example">Example: {scores=29, rolls=X X 9}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X 9</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">29</span></div>
+
+<h3 class="example">Example: {scores=30, rolls=X X X}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30</span></div>
+
+<h3 class="example">Example: {scores=30  58, rolls=X X X 8}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X 8</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  58</span></div>
+
+<h3 class="example">Example: {scores=30  58  77 86, rolls=X X X 81}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X 81</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  58  77 86</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 270 300, rolls=X X X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 270 300</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 270 299, rolls=X X X X X X X X X XX9}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X XX9</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 270 299</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 270 290, rolls=X X X X X X X X X XX-}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X XX-</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 270 290</span></div>
+
+<h3 class="example">Example: {scores=20  50  80 110 140 170 200 230 260 290, rolls=9/X X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">9/X X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">20  50  80 110 140 170 200 230 260 290</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 269 289, rolls=X X X X X X X X X X9/}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X X9/</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 269 289</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 269 288, rolls=X X X X X X X X X X9-}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X X9-</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 269 288</span></div>
+
+<h3 class="example">Example: {scores=30  60  90 120 150 180 210 240 268 287, rolls=X X X X X X X X X X81}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X X X X X X X X X X81</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">30  60  90 120 150 180 210 240 268 287</span></div>
+
+<h3 class="example">Example: {scores=20  40  70 100 130 160 190 220 250 280, rolls=X -/X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X -/X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">20  40  70 100 130 160 190 220 250 280</span></div>
+
+<h3 class="example">Example: {scores=10  10  40  70 100 130 160 190 220 250, rolls=X --X X X X X X X XXX}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X --X X X X X X X XXX</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">10  10  40  70 100 130 160 190 220 250</span></div>
+
+<h3 class="example">Example: {scores=20  40  60  80 100 120 140 160 180 200, rolls=X 9/X 9/X 9/X 9/X 9/X}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">X 9/X 9/X 9/X 9/X 9/X</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">20  40  60  80 100 120 140 160 180 200</span></div>
+
+<h3 class="example">Example: {scores=0   0   0   0   0   0   0   0   0   0, rolls=--------------------}</h3>
+<div class="step successful">Given rolls are <span class="step parameter">--------------------</span></div>
+<div class="step successful">When scores are tallied</div>
+<div class="step successful">Then scores should be <span class="step parameter">0   0   0   0   0   0   0   0   0   0</span></div>
+</div>
+</div>
+</div>
