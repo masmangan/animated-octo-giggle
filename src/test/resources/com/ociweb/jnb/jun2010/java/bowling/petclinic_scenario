@@ -1,0 +1,6 @@
+Scenario: Empty name should not validate
+    Given a person with empty first name 
+    And "Smith" as last name
+    When person is validated
+    Then invalid field must be "firstName"
+    And message is "must not be empty"
