@@ -1,129 +1,64 @@
 package com.ociweb.jnb.jun2010.java.bowling;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
-import org.jbehave.scenario.annotations.Alias;
-import org.jbehave.scenario.annotations.Aliases;
-import org.jbehave.scenario.annotations.BeforeScenario;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+
 import org.jbehave.scenario.annotations.Given;
 import org.jbehave.scenario.annotations.Named;
 import org.jbehave.scenario.annotations.Then;
 import org.jbehave.scenario.annotations.When;
 import org.jbehave.scenario.steps.Steps;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-import fj.data.Validation;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class BowlingSteps extends Steps {
-  private ArrayList<Integer> rolls;
-  private Validation<ScoreBowlingGame.InvalidPinCountException, List<Integer>> scoreResult;
+public class PetClinicSteps extends Steps {
+	Person person = new Person();
 
-  @BeforeScenario
-  public void resetRolls() {
-    rolls = new ArrayList<Integer>();
-  }
+	private Validator createValidator() {
+		LocalValidatorFactoryBean localValidatorFactoryBean = new LocalValidatorFactoryBean();
+		localValidatorFactoryBean.afterPropertiesSet();
+		return localValidatorFactoryBean;
+	}
 
-  @BeforeScenario
-  public void resetScoreResult() {
-      scoreResult = null;
-  }
-    
-  @Given("a strike is bowled")
-  public void aStrikeIsBowled() {
-    rolls.add(10);
-  }
+	Validator validator = createValidator();
+	Set<ConstraintViolation<Person>> constraintViolations;
 
-  @Given("an $count count is bowled and spare is made")
-  @Alias("a $count count is bowled and spare is made")
-  public void countIsBowledAndSpare(Integer count) {
-    rolls.add(count);
-    rolls.add(10 - count);
-  }
+	ConstraintViolation<Person> violation;
 
-  @Given("an $count count is bowled and only $next is picked")
-  @Aliases(values = {
-   "an $count count is bowled and only $next are picked",
-   "a $count count is bowled and only $next is picked",
-   "a $count count is bowled and only $next are picked"
-  })
-  public void countIsBowledAndSomePicked(Integer count, Integer next) {
-    rolls.add(count);
-    rolls.add(next);
-  }
+	@Given("a person with empty first name")
+	public void aPersonWtihEmptyFirstName() {
+		person.setFirstName("");
+	}
 
-  @Given("an $count count is bowled and none are picked")
-  @Alias("a $count count is bowled and none are picked")
-  public void countIsBowledAndNonePicked(Integer count) {
-    countIsBowledAndSomePicked(count, 0);
-  }
+	@Given("$last as last name")
+	public void aPersonWithSmithAsLastName(@Named("last") String lastName) {
+		person.setLastName(lastName);
 
-  @Given("an $count count is bowled")
-  @Alias("a $count count is bowled")
-  public void countIsBowled(Integer count) {
-    rolls.add(count);
-  }
+	}
 
-  @When("scores are tallied")
-  public void scoreAreTallied() {
-    try {
-        scoreResult = Validation.success(new ScoreBowlingGame().f(rolls));
-    } catch (ScoreBowlingGame.InvalidPinCountException ex) {
-        scoreResult = Validation.fail(ex);
-    }
-  }
+	@When("person is validated")
+	public void personIsValidated() {
+		validator = createValidator();
+		constraintViolations = validator.validate(person);
 
-  @Then("the score at frame $frame should be $score")
-  @Alias("$score the score at frame $frame should be")
-  public void scoreAtFrameShouldBe(@Named("frame") Integer frame, @Named("score") Integer score) {
-      assertThat(scoreResult.isSuccess(), is(true));
-      assertThat(scoreResult.success().get(frame - 1), is(score));
-  }
+		assertThat(constraintViolations).hasSize(1);
+		violation = constraintViolations.iterator().next();
+	}
 
-  @Then("there should be no score at frame $frame")
-  public void noScoreAtFrame(Integer frame) {
-    assertThat(scoreResult.isSuccess() && scoreResult.success().size() < frame, is(true));
-  }
+	@Then("invalid field must be $field")
+	public void getInvalidField(@Named("field") String field) {
+		assertThat(violation.getPropertyPath().toString()).isEqualTo(field);
+	}
 
-  @Then("invalid pin count should be detected")
-  public void  invalidPinCountShouldBeDetected() {
-    assertThat(scoreResult.isFail(), is(true));
-  }
+	@Then("message is $message")
+	public void getInvalidMessage(@Named("message") String message) {
+		assertThat(violation.getMessage()).isEqualTo(message);
+	}
 
-  @Given("rolls look like $rolls")
-  @Alias("rolls are <rolls>")
-  public void rollsLookLike(@Named("rolls") String rollString) {
-    rolls = new ArrayList<Integer>();
-    char[] rollChars = rollString.toCharArray();
-    Integer lastRoll = null;
-    for (int i=0; i < rollChars.length; i++) {
-        if (rollChars[i] == 'X') {
-            lastRoll = 10;
-        } else if (rollChars[i] >= '0' && rollChars[i] <= '9') {
-            lastRoll = Integer.parseInt("" + rollChars[i]);
-        } else if (rollChars[i] == '/') {
-            lastRoll = 10 - lastRoll;
-        } else if (rollChars[i] == '-') {
-            lastRoll = 0;
-        } else {
-            lastRoll = null;
-        }
-        if (lastRoll != null) { rolls.add(lastRoll); };
-    }
-  }
-
-  @Then("scores should be <scores>")
-  public void scoreShouldBe(@Named("scores") String expectedScores) {
-      assertThat(scoreResult.isSuccess(), is(true));
-      String[] scoreArray = expectedScores.split(" +");
-      assertThat(scoreResult.success().size(), is(scoreArray.length));
-      for (int i=0; i < scoreArray.length; i++) {
-          assertThat(scoreResult.success().get(i), is(new Integer(scoreArray[i])));
-      }      
-  }
-
-  //private void  fail(String reason) { throw new AssertionError(reason); }
 }
